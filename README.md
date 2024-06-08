@@ -1,8 +1,8 @@
 def read_recipes_from_file(file_name): recipes = []
 
-with open(file_name, 'r') as file:
-    lines = file.readlines()
-    i = 0
+    with open(file_name, 'r') as file:
+        lines = file.readlines()
+        i = 0
     
     while i < len(lines):
         recipe_name = lines[i].strip()
@@ -24,22 +24,24 @@ with open(file_name, 'r') as file:
         
         i += 2 + num_ingredients
 
-return recipes
+    return recipes
+
 def print_recipes(recipes):
 
-for recipe in recipes:
+    for recipe in recipes:
 
-    print(recipe['name'])
+        print(recipe['name'])
 
-    print("Ingredients:")
+        print("Ingredients:")
 
-    for ingredient in recipe['ingredients']:
+        for ingredient in recipe['ingredients']:
 
-        print(f"{ingredient['name']} - {ingredient['quantity']} 
+            print(f"{ingredient['name']} - {ingredient['quantity']} 
 
-        {ingredient['unit']}")
+            {ingredient['unit']}")
 
-    print()
+        print()
+
 file_name = 'recipes.txt'
 
 recipes = read_recipes_from_file(file_name)
